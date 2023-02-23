@@ -6,23 +6,19 @@ class Node:
         self.next = None
 
 
-def insertEnd(head,x):
-
-    temp = Node(x)
+def delHead(head):
 
     if head == None:
-        return temp
+        return None
 
+    if head.next == None:
+        return None
     else:
-
-        curr = head
-        while curr.next != None:
-            curr = curr.next
-
-        curr.next = temp
-        temp.prev = curr
+        head = head.next
+        head.prev = None
 
         return head
+
 
 
 def printDll(head):
@@ -45,6 +41,6 @@ temp2.prev = temp1
 
 printDll(head)
 
-head = insertEnd(head, 40)
+head = delHead(head)
 
 printDll(head)
