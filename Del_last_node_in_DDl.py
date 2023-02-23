@@ -6,19 +6,19 @@ class Node:
         self.next = None
 
 
-def delHead(head):
-
+def delLast(head):
     if head == None:
         return None
-
     if head.next == None:
         return None
-    else:
-        head = head.next
-        head.prev = None
 
-        return head
+    curr = head
+    while curr.next.next != None:
+        curr = curr.next
 
+    curr.next = None
+
+    return head
 
 
 def printDll(head):
@@ -41,6 +41,6 @@ temp2.prev = temp1
 
 printDll(head)
 
-head = delHead(head)
+head = delLast(head)
 
-printDll(head) 
+printDll(head)
