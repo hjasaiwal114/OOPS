@@ -6,7 +6,6 @@ class Atm :
         self.__pin = ""
         self.__balance = 0
         print(id(self))
-        
         self.menu()
     """
     there is getter and setter to get and set the private class
